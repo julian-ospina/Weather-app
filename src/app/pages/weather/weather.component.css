@@ -1,0 +1,129 @@
+.container {
+  max-width: 420px;
+  margin: 30px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  transition: 0.3s;
+}
+
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.title {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.toggle-btn {
+  background: none;
+  border: 1px solid;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.toggle-btn:hover {
+  opacity: 0.7;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.search-box input {
+  padding: 8px;
+  width: 60%;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+.search-box button {
+  padding: 8px 12px;
+  border: none;
+  background: royalblue;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.search-box button:hover {
+  background: #355fdc;
+}
+
+.hint {
+  font-size: 14px;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.card {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+/* Dark mode card */
+.dark .card {
+  background: #1f1f1f;
+  color: white;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+}
+
+.temp {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.condition {
+  font-size: 18px;
+  margin: 5px 0;
+  font-style: italic;
+}
+
+.details {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* Default text color */
+.dark-text {
+  color: #000;
+}
+
+/* When parent .dark is active */
+.container.dark .dark-text {
+  color: #fff;
+}
+
+/* Make background dark */
+.container.dark {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Make card dark too */
+.container.dark .card {
+  background: #1f1f1f;
+  border: 1px solid #333;
+}

@@ -1,0 +1,41 @@
+<div class="container" [class.dark]="isDarkMode">
+
+  <h2 class="title dark-text">Weather App 🌤️</h2>
+
+  <!-- Dark Mode Toggle -->
+  <button class="toggle-btn dark-text" (click)="toggleDarkMode()">
+    {{ isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode' }}
+  </button>
+
+  <!-- Search box -->
+  <div class="search-box">
+    <input [(ngModel)]="city" placeholder="Search city..." />
+    <button (click)="searchCityWeather()">Search</button>
+  </div>
+
+  <p class="hint dark-text">🔎 Look for any city in the world!</p>
+
+  <div *ngIf="loading" class="loading dark-text">Loading...</div>
+
+  <!-- Weather Card -->
+  <div *ngIf="weatherData" class="card">
+    <h3 class="dark-text">{{ weatherData.location.name }}, {{ weatherData.location.country }}</h3>
+
+    <p class="subtext dark-text">Weather information below</p>
+
+    <div class="weather-info">
+      <!-- Weather icon -->
+      <img [src]="weatherData.current.condition.icon" alt="Weather icon" class="icon"/>
+      <p class="temp dark-text">{{ weatherData.current.temp_c }}°C</p>
+    </div>
+
+    <p class="condition dark-text">{{ weatherData.current.condition.text }}</p>
+
+    <div class="details dark-text">
+      <p>🌬️ Wind: {{ weatherData.current.wind_kph }} kph</p>
+      <p>💧 Humidity: {{ weatherData.current.humidity }}%</p>
+      <p>🕒 {{ weatherData.location.localtime }}</p>
+    </div>
+  </div>
+
+</div>
